@@ -2,6 +2,9 @@ name: Build WRT
 run-name: Build - ${{ inputs.model }}
 
 on:
+  schedule:
+    - cron: 0 20 * * *
+    
   workflow_dispatch:
     inputs:
       model:
