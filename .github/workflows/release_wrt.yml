@@ -2,10 +2,17 @@ name: Release WRT
 run-name: Release - ${{ inputs.model }}
 
 on:
+
+  #自动编译：当Auto-Clean运行完成后
+  workflow_run:
+    workflows: ["Auto-Clean"]
+    types:
+      - completed
+
   workflow_dispatch:
     inputs:
       model:
-        required: true
+        required: false
         description: Device Model
         type: choice
         default: jdcloud_ipq60xx_immwrt
@@ -24,7 +31,7 @@ on:
           - zn_m2_libwrt
           - x64_immwrt
       runs-on:
-        required: true
+        required: false
         description: Runs on...
         type: choice
         default: ubuntu-22.04
