@@ -3,12 +3,6 @@ run-name: Release - ${{ inputs.model }}
 
 on:
 
-  #自动编译：当Auto-Clean运行完成后
-  workflow_run:
-    workflows: ["Auto-Clean"]
-    types:
-      - completed
-
   workflow_dispatch:
     inputs:
       model:
@@ -17,19 +11,19 @@ on:
         type: choice
         default: jdcloud_ipq60xx_immwrt
         options:
-          - aliyun_ap8220_immwrt
-          - cmcc_rax3000m_immwrt
-          - jdcloud_ax6000_immwrt
+          # - aliyun_ap8220_immwrt
+          # - cmcc_rax3000m_immwrt
+          # - jdcloud_ax6000_immwrt
           - jdcloud_ipq60xx_immwrt
           - jdcloud_ipq60xx_libwrt
-          - n1_immwrt
-          - redmi_ax5_immwrt
-          - redmi_ax6_immwrt
-          - redmi_ax6_libwrt
-          - redmi_ax6000_immwrt21
-          - zn_m2_immwrt
-          - zn_m2_libwrt
-          - x64_immwrt
+          # - n1_immwrt
+          # - redmi_ax5_immwrt
+          # - redmi_ax6_immwrt
+          # - redmi_ax6_libwrt
+          # - redmi_ax6000_immwrt21
+          # - zn_m2_immwrt
+          # - zn_m2_libwrt
+          # - x64_immwrt
 
 env:
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
